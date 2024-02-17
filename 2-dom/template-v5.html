@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+    <p v-once>{{titulo}}</p>
+    <p c3r-bind="abc">{{saudacao()}}</p>
+    <a v-bind:href="link" target="_blank">Meu GitHub</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: "Usando VueJS!",
+            link: 'https://github.com/lucasNithael/'
+        },
+        methods:{
+            saudacao : function(){
+                this.titulo = "Boa semana!";
+                return this.titulo;
+            }
+        }
+    });
+</script>
