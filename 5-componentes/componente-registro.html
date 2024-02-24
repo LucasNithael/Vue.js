@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app1">
+    <contador></contador>
+    <contador></contador>
+    <contador></contador>
+</div>
+<hr>
+<div id="app2">
+    <app-contador></app-contador>
+    <app-contador></app-contador>
+    <app-contador></app-contador>
+</div>
+
+<script>
+    const contador_e =  {
+        template:`
+        <div>
+            <span>{{contador}}</span>
+            <button @click="contador++">+</button>
+            <button @click="contador--">-</button>
+        </div>
+        `,
+        data() {
+            return{
+                contador: 0
+            }
+        },
+    }
+
+    new Vue({
+        el: '#app1',
+        components: {
+            contador: contador_e
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        components: {
+            'app-contador': contador_e // o js não aceita o nome do componente com hífen, então é necessário usar aspas
+        }
+    })
+</script>
