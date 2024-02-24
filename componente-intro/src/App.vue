@@ -1,7 +1,6 @@
 <template>
-   <app-component/>
-   <app-component/>
-   <app-component/>
+        <h1>Contadores</h1>
+   <app-contadores v-for="c in 5" :key="c"/>
 </template>
 
 <script>
